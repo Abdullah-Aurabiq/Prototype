@@ -1,0 +1,241 @@
+/* === General Layout === */
+.quiz-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(to bottom right, #ebf8ff, #f3e8ff); /* blue-50 to purple-50 */
+}
+
+.quiz-wrapper {
+  width: 100%;
+  max-width: 32rem; /* same as max-w-lg */
+}
+
+/* === Questions UI === */
+.question-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* === Buttons === */
+.quiz-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-button:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+/* === Result Card === */
+.result-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.result-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.score-text {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #2563eb; /* blue-600 */
+  margin-bottom: 1rem;
+}
+
+.result-details {
+  color: #374151; /* gray-700 */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* === CTA Button === */
+.cta-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #16a34a; /* green-600 */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #15803d; /* green-700 */
+}
+.animated-card {
+  background-color: white;
+  border-radius: 1rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  padding: 2rem; /* p-8 */
+  width: 100%;
+  max-width: 28rem; /* max-w-md */
+}
+.progress-bar-track {
+  width: 100%;
+  background-color: #e5e7eb; /* gray-200 */
+  border-radius: 9999px;
+  height: 0.625rem; /* 2.5 */
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background-color: #2563eb; /* blue-600 */
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.followup-form {
+  margin-top: 1.5rem;
+}
+
+.followup-form input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+.progress-label {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #4b5563; /* gray-600 */
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.styled-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f9fafb;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  border: 1px solid #d1d5db;
+}
+
+.styled-radio:hover {
+  background-color: #f3f4f6;
+}
+
+.styled-radio input[type="radio"] {
+  accent-color: #2563eb; /* blue-600 */
+  width: 1rem;
+  height: 1rem;
+}
+.milestone-message {
+  background-color: #f9fafb;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #2563eb;
+}
+
+.milestone-message h3,
+.milestone-message h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.milestone-message ul,
+.milestone-message ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.milestone-message ul li,
+.milestone-message ol li {
+  margin-bottom: 0.25rem;
+}
+.quiz-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+.quiz-logo {
+  max-width: 120px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.founder-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+.top-logo-header {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb; /* light border */
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-logo {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 0.25rem;
+}
+
+.top-author {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563; /* gray-600 */
+}
