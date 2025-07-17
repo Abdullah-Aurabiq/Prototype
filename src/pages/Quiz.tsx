@@ -127,7 +127,7 @@ export default function Quiz() {
       playSound("./audio/404359__kagateni__success2.wav");
       setStep(step + 1);
     } else {
-      const res = await fetch("https://electric-mistakenly-rat.ngrok-free.app//analyze", {
+      const res = await fetch("https://electric-mistakenly-rat.ngrok-free.app/analyze", {
         method: "POST",
         headers: { "ngrok-skip-browser-warning": "true", "Content-Type": "application/json" },
         body: JSON.stringify(answers)
