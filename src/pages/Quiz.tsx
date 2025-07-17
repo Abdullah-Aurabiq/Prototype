@@ -3,7 +3,7 @@ import AnimatedCard from '../components/AnimatedCard';
 import ProgressBar from '../components/ProgressBar';
 import Confetti from 'react-confetti';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 const questions = [
   {
     id: 1,
@@ -106,7 +106,7 @@ export default function Quiz() {
   const [clientName, setClientName] = useState('');
   const [clientEmail, setClientEmail] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  // const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const [result, setResult] = useState<null | {
     timeSaved: string;
