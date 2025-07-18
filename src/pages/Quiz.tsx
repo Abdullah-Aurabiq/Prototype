@@ -121,10 +121,10 @@ export default function Quiz() {
 
 
   const handleNext = async () => {
-    playSound("./audio/506054__mellau__button-click-1.wav");
+    playSound("./506054__mellau__button-click-1.wav");
 
     if (step < questions.length - 1) {
-      playSound("./audio/404359__kagateni__success2.wav");
+      playSound("./404359__kagateni__success2.wav");
       setStep(step + 1);
     } else {
       const res = await fetch("https://electric-mistakenly-rat.ngrok-free.app/analyze", {
@@ -135,7 +135,7 @@ export default function Quiz() {
       const data = await res.json();
       setResult(data);
       setShowConfetti(true);
-      playSound("/audio/finish.mp3");
+      playSound("./audio/finish.mp3");
     }
   };
 
