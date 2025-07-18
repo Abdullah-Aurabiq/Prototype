@@ -135,12 +135,12 @@ export default function Quiz() {
       const data = await res.json();
       setResult(data);
       setShowConfetti(true);
-      playSound("/finish.mp3");
+      playSound("/607926__robinhood76__10661-bonus-correct-answer.wav");
     }
   };
 
   useEffect(() => {
-    if (step === 0) {
+    if (step === 1) {
       playSound("/607926__robinhood76__10661-bonus-correct-answer.wav");
     } else if (step === 5) {
       playSound("/607926__robinhood76__10661-bonus-correct-answer.wav");
