@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 const questions = [
   {
     id: 1,
-    text: "How many hours/week do you waste on repetitive tasks?",
+    text: "How many hours per week do you waste on repetitive tasks?",
     inputType: "number",
     type: "text"
   },
@@ -29,7 +29,7 @@ const questions = [
   },
   {
     id: 3,
-    text: "What is your biggest bottleneck right now?",
+    text: "What is your BIGGEST bottleneck right now?",
     type: "bottleneck"
   },
   {
