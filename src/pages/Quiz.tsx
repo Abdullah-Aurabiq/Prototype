@@ -151,8 +151,6 @@ export default function Quiz() {
     const nextQuestion = questions[step + 1];
     if (isLastQuestion) {
       // Disable button to prevent multiple submissions
-      document.querySelector('.quiz-button')!.textContent = "Submitting...";
-      document.querySelector('.quiz-button')!.setAttribute('disabled', 'true');
       const res = await fetch("https://electric-mistakenly-rat.ngrok-free.app/analyze", {
         method: "POST",
         headers: {
@@ -161,6 +159,8 @@ export default function Quiz() {
         },
         body: JSON.stringify(answers) // FIXED IN PART 2 BELOW
       });
+      // document.querySelector('.quiz-button')!.textContent = "Submitting...";
+      // document.querySelector('.quiz-button')!.setAttribute('disabled', 'true');
       const data = await res.json();
       setResult(data);
       setShowConfetti(true);
@@ -438,7 +438,7 @@ export default function Quiz() {
                       <p>✅ Thank you! We'll follow up with you soon.</p>
                     ) : (
                       <a
-                        href="https://calendly.com/your-link"
+                        href="https://calendly.com/fouziaqateel/meet-with-us"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="cta-button"
