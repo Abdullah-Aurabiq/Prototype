@@ -274,7 +274,7 @@ export default function Quiz() {
                           }
                         />
 
-                        {current.options?.length > 0 && (
+                        {Array.isArray(current.options) && current.options?.length > 0 && (
                           <div className="radio-group">
                             {current.options?.map((option: string, i: number) => (
                               <label key={i} className="styled-radio">
