@@ -214,15 +214,36 @@ export default function Quiz() {
                 <>
                   <h2 className="question-title">{current.text}</h2>
 
-                  {current.type === 'text' && (
-                    <input
-                      type={current.inputType || "text"}
-                      className="quiz-input"
-                      onChange={(e) =>
-                        setAnswers({ ...answers, [current.id]: e.target.value })
-                      }
-                    />
-                  )}
+                   {current.type === 'text' && (
+                      <div>
+                        <input
+                          type={current.inputType || "text"}
+                          className="quiz-input"
+                          onChange={(e) =>
+                            setAnswers({ ...answers, [current.id]: e.target.value })
+                          }
+                        />
+
+                        {/* Show options as radio buttons */}
+                        {current.options?.length > 0 && (
+                          <div className="radio-group">
+                            {current.options.map((option: string, i: number) => (
+                              <label key={i} className="styled-radio">
+                                <input
+                                  type="radio"
+                                  name={`text-question-${current.id}`} // Unique group
+                                  value={option}
+                                  onChange={() =>
+                                    setAnswers({ ...answers, [current.id]: option })
+                                  }
+                                />
+                                <span>{option}</span>
+                              </label>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
 
                   {current.type === 'checkbox' && (
                     <div className="radio-group">
