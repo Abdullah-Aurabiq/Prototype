@@ -224,7 +224,6 @@ export default function Quiz() {
                           }
                         />
 
-                        {/* Show options as radio buttons */}
                         {current.options?.length > 0 && (
                           <div className="radio-group">
                             {current.options.map((option: string, i: number) => (
