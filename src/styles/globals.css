@@ -1,139 +1,130 @@
-/* === General Layout === */
+:root {
+  --bg: #0f0f0f;
+  --text: #d1fcd3;
+  --accent: #00ff88;
+  --accent-soft: rgba(0, 255, 100, 0.2);
+  --card-bg: rgba(0, 255, 100, 0.05);
+  --input-bg: rgba(20, 20, 20, 0.7);
+  --input-border: rgba(0, 255, 100, 0.3);
+}
+
+[data-theme='light'] {
+  --bg: #f9fefb;
+  --text: #0a2e19;
+  --accent: #009f5e;
+  --accent-soft: rgba(0, 159, 94, 0.15);
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --input-bg: #ffffff;
+  --input-border: #99e7c0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  background-attachment: fixed;
+}
+
 .quiz-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: linear-gradient(to bottom right, #ebf8ff, #f3e8ff); /* blue-50 to purple-50 */
+  padding: 2rem;
+  background: var(--bg);
 }
 
 .quiz-wrapper {
   width: 100%;
-  max-width: 32rem; /* same as max-w-lg */
+  max-width: 36rem;
+  backdrop-filter: blur(12px);
+  background: var(--card-bg);
+  border: 1px solid var(--accent-soft);
+  border-radius: 1rem;
+  box-shadow: 0 0 25px var(--accent-soft);
+  padding: 2rem;
 }
 
-/* === Questions UI === */
 .question-title {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  color: var(--accent);
 }
 
 .quiz-input {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border);
   border-radius: 0.5rem;
-  margin-bottom: 1.5rem;
+  background: var(--input-bg);
+  color: var(--text);
   font-size: 1rem;
+  margin-bottom: 1.5rem;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
-/* === Buttons === */
+.quiz-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
 .quiz-button {
   width: 100%;
   padding: 0.75rem 1.5rem;
-  background-color: #2563eb; /* blue-600 */
-  color: white;
+  background: linear-gradient(135deg, var(--accent), #00c86b);
+  color: #0f0f0f;
+  font-weight: 600;
+  font-size: 1rem;
   border: none;
   border-radius: 0.5rem;
-  font-weight: 500;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .quiz-button:hover {
-  background-color: #1d4ed8; /* blue-700 */
+  transform: scale(1.02);
+  box-shadow: 0 0 18px var(--accent);
 }
 
-/* === Result Card === */
 .result-card {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--accent-soft);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--accent-soft);
+  padding: 2rem;
+  color: var(--text);
   text-align: left;
 }
 
-.result-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
 .score-text {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #2563eb; /* blue-600 */
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
-.result-details {
-  color: #374151; /* gray-700 */
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-/* === CTA Button === */
 .cta-button {
   display: block;
   width: 100%;
-  text-align: center;
-  background-color: #16a34a; /* green-600 */
-  color: white;
+  background: linear-gradient(135deg, var(--accent), #00c86b);
+  color: #0f0f0f;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  text-align: center;
+  margin-top: 1rem;
+  transition: box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #15803d; /* green-700 */
-}
-.animated-card {
-  background-color: white;
-  border-radius: 1rem; /* rounded-xl */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-              0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-  padding: 2rem; /* p-8 */
-  width: 100%;
-  max-width: 28rem; /* max-w-md */
-}
-.progress-bar-track {
-  width: 100%;
-  background-color: #e5e7eb; /* gray-200 */
-  border-radius: 9999px;
-  height: 0.625rem; /* 2.5 */
-  overflow: hidden;
+  box-shadow: 0 0 18px var(--accent);
 }
 
-.progress-bar-fill {
-  background-color: #2563eb; /* blue-600 */
-  height: 100%;
-  border-radius: 9999px;
-}
-
-.followup-form {
-  margin-top: 1.5rem;
-}
-
-.followup-form input {
-  display: block;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-}
-.progress-label {
-  margin-bottom: 0.25rem;
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #4b5563; /* gray-600 */
-}
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -141,101 +132,117 @@
   margin-bottom: 1.5rem;
 }
 
-.styled-radio {
+.styled-radio,
+.radio-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: #f9fafb;
+  gap: 0.75rem;
+  background: var(--card-bg);
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
+  border: 1px solid var(--accent-soft);
   cursor: pointer;
+  transition: background 0.2s, box-shadow 0.3s;
   font-weight: 500;
-  transition: background-color 0.2s ease;
-  border: 1px solid #d1d5db;
 }
 
-.styled-radio:hover {
-  background-color: #f3f4f6;
+.styled-radio:hover,
+.radio-label:hover {
+  background: rgba(0, 255, 100, 0.07);
+  box-shadow: 0 0 10px var(--accent-soft);
 }
 
-.styled-radio input[type="radio"] {
-  accent-color: #2563eb; /* blue-600 */
+.styled-radio input[type="radio"],
+.radio-label input[type="checkbox"],
+.radio-label input[type="radio"] {
+  accent-color: var(--accent);
   width: 1rem;
   height: 1rem;
 }
+
+.progress-bar-track {
+  width: 100%;
+  background-color: var(--accent-soft);
+  border-radius: 9999px;
+  height: 0.625rem;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(to right, var(--accent), #00c86b);
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-label {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
 .milestone-message {
-  background-color: #f9fafb;
+  background: var(--card-bg);
+  border-left: 4px solid var(--accent);
   padding: 1.25rem;
   border-radius: 0.75rem;
   margin-bottom: 1.5rem;
-  border-left: 4px solid #2563eb;
 }
 
-.milestone-message h3,
-.milestone-message h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.milestone-message h2,
+.milestone-message h3 {
+  color: var(--accent);
 }
 
-.milestone-message ul,
-.milestone-message ol {
-  margin: 0.5rem 0;
-  padding-left: 1.5rem;
-  font-size: 0.95rem;
-}
-
-.milestone-message ul li,
-.milestone-message ol li {
-  margin-bottom: 0.25rem;
-}
-.quiz-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.logo-box {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-direction: column;
-  text-align: center;
-}
-
-.quiz-logo {
-  max-width: 120px;
-  height: auto;
-  border-radius: 0.5rem;
-}
-
-.founder-name {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #4b5563;
-}
 .top-logo-header {
   width: 100%;
   padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  border-bottom: 1px solid #e5e7eb; /* light border */
-  margin-bottom: 1rem;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--accent-soft);
   position: sticky;
   top: 0;
   z-index: 100;
+  text-align: center;
 }
 
 .top-logo {
   max-width: 120px;
-  height: auto;
-  margin-bottom: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 .top-author {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  color: #4b5563; /* gray-600 */
+  color: var(--text);
+}
+
+.mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--accent-soft);
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+  z-index: 999;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.mode-toggle:hover {
+  background-color: var(--accent-soft);
+}
+
+.stage-transition {
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+.hidden {
+  display: none;
+  width: 0;
+  height: 0;
+  visibility: hidden;
 }

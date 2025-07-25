@@ -8,7 +8,8 @@ export default function AnimatedCard({ children }: { children: react.ReactNode }
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.5 }}
-      className="animated-card"
+      className="animated-card card-glow"
+
     >
       {children}
     </motion.div>
