@@ -155,7 +155,7 @@ export default function Quiz() {
         method: "POST",
         headers: {
           "ngrok-skip-browser-warning": "true",
-          "Content-Type": "application/json"
+          // "Content-Type": "application/json"
         },
         body: JSON.stringify(answers) // FIXED IN PART 2 BELOW
       });
@@ -420,7 +420,7 @@ export default function Quiz() {
                           onClick={async () => {
                             const res = await fetch('https://electric-mistakenly-rat.ngrok-free.app/notify-low-score', {
                               method: 'POST',
-                              headers: { "ngrok-skip-browser-warning": "true", "Content-Type": "application/json" },
+                              headers: { "ngrok-skip-browser-warning": "true" },
                               body: JSON.stringify({
                                 name: clientName,
                                 email: clientEmail,
