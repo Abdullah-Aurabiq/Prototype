@@ -420,8 +420,7 @@ export default function Quiz() {
                           onClick={async () => {
                             const res = await fetch('https://electric-mistakenly-rat.ngrok-free.app/notify-low-score', {
                               method: 'POST',
-                              headers: { "ngrok-skip-browser-warning": "true",
-                                 "Content-Type": "application/json"  // ✅ This is required!
+                              headers: { "ngrok-skip-browser-warning": "true", "Content-Type": "application/json"  // ✅ This is required
                                },
                               body: JSON.stringify({
                                 name: clientName,
